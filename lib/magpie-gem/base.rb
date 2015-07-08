@@ -98,21 +98,17 @@ module Magpie
     end
 
     def set_attributes(data, options = {})
-      context, options = extract_context(options)
+      context, options =  if options.is_a? Hash
+                            [options.delete(:context), options]
+                          else
+                            [options, {}]
+                          end
 
       data.each do |key, value|
         val = extract_magpie_instance(key, value, context)
         set_attribute(key, val, options)
       end
       self
-    end
-
-    def extract_context(options)
-      if options.is_a? Hash
-        [options.delete(:context), options]
-      else
-        [options, {}]
-      end
     end
 
     def extract_magpie_instance(key, value, context = nil)

@@ -4,8 +4,6 @@ module Magpie
 
     attr_accessor :id, :name, :email, :phone, :default_role, :company_id
 
-    DEDUP_ATTRIBUTES = [:email]
-
     def initialize
     end
 

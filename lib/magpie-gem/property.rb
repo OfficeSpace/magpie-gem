@@ -9,8 +9,6 @@ require 'magpie-gem/property_amenities.rb'
 
 module Magpie
   class Property < Magpie::Entity
-    DEDUP_ATTRIBUTES = [:formatted_long_address]
-
     attr_accessor :for_lease, :name, :description, :zoning, :tax_id_number, :location, :land, :built, :sale, :space,
                   :media, :amenities, :floor_load_ratio, :contacts, :locked_listing, :last_updated
 

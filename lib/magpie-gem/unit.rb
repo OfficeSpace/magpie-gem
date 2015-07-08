@@ -6,8 +6,6 @@ require 'magpie-gem/unit_amenities.rb'
 
 module Magpie
   class Unit < Magpie::Entity
-    DEDUP_ATTRIBUTES = nil
-
     attr_accessor :property
 
     attr_accessor :property_id, :floor, :suite, :status, :available_on, :contacts, :space, :lease, :media, :amenities

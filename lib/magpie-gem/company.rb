@@ -4,8 +4,6 @@ module Magpie
   class Company < Magpie::Entity
     has_one :postal_address, class: Magpie::PostalAddress
 
-    DEDUP_ATTRIBUTES = [:name, :city, :state]
-
     attr_accessor :name, :postal_address, :phone, :fax, :email, :url
 
     validates_presence_of :name

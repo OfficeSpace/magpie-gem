@@ -96,7 +96,7 @@ module Magpie
 
     def validate_model_attributes
       attribs = model_attributes
-      raise TypeError, "Single Family Home is not a valid property type" if name.downcase.include?("single family home")
+      raise TypeError, "Single Family Home is not a valid property type" if @name.try(:downcase).try(:include?,"single family home")
       validate_model_attributes_presence [:address, :city, :state, :postal_code], attribs
     end
 

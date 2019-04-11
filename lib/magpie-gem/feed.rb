@@ -46,7 +46,7 @@ module Magpie
       end
     }
 
-    attr_accessor :feed_provider, :publisher_email, :publisher_application, :publisher_application_version
+    attr_accessor :feed_provider, :publisher_email, :publisher_application, :publisher_application_version, :sublease_feed
 
     def initialize(attributes={})
       super
@@ -62,7 +62,7 @@ module Magpie
 
     def from_json(json, context=nil)
       obj = JSON.parse(json)
-      @data['sublease'] = obj.fetch('sublease', false)
+      self.sublease_feed = obj.fetch('sublease', false)
       Magpie::Base.each_entity_class {|entity_class, entity_name, entity_name_plural|
         instances = (obj[entity_name_plural] || {}).map do |c|
           model = entity_class.new
@@ -95,7 +95,7 @@ module Magpie
     end
 
     def sublease?
-      @data['sublease'] == true
+      self.sublease_feed == true
     end
   end
 end

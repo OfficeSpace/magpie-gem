@@ -1,5 +1,6 @@
 require 'magpie-gem/property_space_type.rb'
 require_relative 'concerns/use_types'
+require 'active_support/core_ext/object/with_options' unless Object.respond_to?(:with_options)
 
 module Magpie
   class PropertySpaceTypeOffice < Magpie::PropertySpaceType

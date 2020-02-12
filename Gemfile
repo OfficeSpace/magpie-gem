@@ -11,7 +11,7 @@ group :development do
   gem "bundler", "~> 1.0"
   # gem "jeweler", "~> 1.8.7"
   gem "simplecov", ">= 0"
-  gem "activemodel", ">= 3.1.12"
+  gem "activemodel", ">= 3.1.12", "< 5.0.0"
   gem "spork"
   gem "guard"
   gem 'guard-bundler'
